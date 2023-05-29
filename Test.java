@@ -55,23 +55,23 @@ public class Test {
                 int inp1 = scanner.nextInt();
                 String bankName = accNo.split("-")[0];
                 if (bankName.equals("SBI")){
-                    Atm atm = new SBI();
+                    AtmService atmService = new SBI();
                     if (inp1==1){
-                        atm.cashWithdrawal(accNo);
+                        atmService.cashWithdrawal(accNo);
                     } else if (inp1 == 2) {
-                        atm.fundTransfer(accNo);
+                        atmService.fundTransfer(accNo);
                     } else if (inp1 == 3) {
-                        atm.checkBalance(accNo);
+                        atmService.checkBalance(accNo);
                     }
                 }
                 else if (bankName.equals("AU")){
-                    Atm atm = new AU();
+                    AtmService atmService = new AU();
                     if (inp1==1){
-                        atm.cashWithdrawal(accNo);
+                        atmService.cashWithdrawal(accNo);
                     } else if (inp1 == 2) {
-                        atm.fundTransfer(accNo);
+                        atmService.fundTransfer(accNo);
                     } else if (inp1 == 3) {
-                        atm.checkBalance(accNo);
+                        atmService.checkBalance(accNo);
                     }
                 }
             }else {
@@ -80,9 +80,6 @@ public class Test {
             }
 
         }
-
-
-
 
     }
 

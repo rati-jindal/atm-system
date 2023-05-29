@@ -2,10 +2,10 @@ package OopsConcepts.AtmProject;
 
 import java.util.Scanner;
 
-public class SBI extends Atm {
+public class SBI implements AtmService {
 
     Scanner sc = new Scanner(System.in);
-
+    Atm atm = new Atm();
     @Override
     public void cashWithdrawal(String accountNo) {
         //entering amount
@@ -16,7 +16,7 @@ public class SBI extends Atm {
             Test.mainMenu();
         }
         //checking if amount is positive and is available
-        if (amount > 0 && amount <= SBI.getAtmBalance()) {
+        if (amount > 0 && amount <= atm.getAtmBalance()) {
             //entering pin
             System.out.println("Enter pin");
             System.out.println("Enter 0 for exit");
@@ -38,7 +38,7 @@ public class SBI extends Atm {
                     } else {
                         System.out.println("Withdrawing");
                         account.setBalance(account.getBalance() - amount);
-                        setAtmBalance(getAtmBalance() - amount);
+                        atm.setAtmBalance(atm.getAtmBalance() - amount);
                         System.out.println("Done..");
                         System.out.println("Your Current Balance is : " + account.getBalance());
                         Test.mainMenu();
